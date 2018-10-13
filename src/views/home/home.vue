@@ -7,20 +7,24 @@
         <div class="home_background">
           <img src="../../assets/img/bj.jpg"/>
         </div>
-        <!--信息-->
-        <div class="home_information">
-          <span>人数：123456</span>
-        </div>
         <!--内容-->
         <flexbox orient="vertical" :gutter="0" class="home_personal">
           <!--头像-->
-          <flexbox-item>
-            <img src="../../../build/logo.png" />
-          </flexbox-item>
-          <!--名字-->
-          <flexbox-item class="home_name">
-            <span>name</span>
-          </flexbox-item>
+          <div class="home_portrait">
+            <img :src="portrait" />
+            <img class="home_portrait_grade" :src="portrait"/>
+          </div>
+          <!--用户-->
+          <div class="home_name">
+            <p>18888888888</p>
+            <!--星级-->
+            <div class="home_star">
+              <rater :max="data1" v-model="data1" active-color="#F6FE00" disabled></rater>
+            </div>
+            <div class="home_people">
+              <span>在我之后有123456人</span>
+            </div>
+          </div>
           <!--功能-->
           <div class="home_flex">
             <div class="home_scan">
@@ -72,7 +76,7 @@
             <div class="home_border">
               <i class="icon icon-gonggao1"></i>
               <marquee>
-                <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">内容{{i}}</marquee-item>
+                <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容{{i}}</marquee-item>
               </marquee>
               <div class="home_announcement1">
                 <router-link to="/announcement">更多</router-link>
@@ -80,16 +84,16 @@
             </div>
           </div>
           <!--菜单-->
-          <grid :cols="3" :show-lr-borders="false" class="home_grid">
+          <grid :cols="3" :show-lr-borders="false" class="home_a">
             <grid-item v-for="(item, index) in icon" :key="index" class="home_menu">
-              <i :class="item.menuIcon"></i>
+              <i :class="item.menuIcon" :style="{color: item.colorIcon}"></i>
               <p class="grid-center">{{item.menuName}}</p>
             </grid-item>
           </grid>
         </flexbox>
       </div>
       <tabbar slot="bottom">
-        <tabbar-item selected>
+        <tabbar-item link="/home" selected>
           <i slot="icon" class="icon icon-home"></i>
           <span slot="label">Wechat</span>
         </tabbar-item>
@@ -111,49 +115,61 @@
 </template>
 
 <script>
-import { login } from '../../api/api'
+import { login } from '../../api/api';
+import src from '../../assets/img/vux_logo.png'
 export default {
   name: 'home',
   data () {
     return {
       asyncCount: 0,
+      portrait: src,
+      data1: 3,
       num: '',
       icon: [
         {
           menuIcon: 'icon icon-yinhangqia1',
-          menuName: '转出'
+          menuName: '转出',
+          colorIcon: '#5d39fc'
         },
         {
           menuIcon: 'icon icon-jifen1',
-          menuName: '转入'
+          menuName: '转入',
+          colorIcon: '#f8f000'
         },
         {
           menuIcon: 'icon icon-licai',
-          menuName: '理财'
+          menuName: '理财',
+          colorIcon: '#5d3afc'
         },
         {
           menuIcon: 'icon icon-huiyuan',
-          menuName: '会员礼包'
+          menuName: '会员礼包',
+          colorIcon: '#EE4C00'
         },
         {
           menuIcon: 'icon icon-dianpu1',
-          menuName: '商城'
+          menuName: '商城',
+          colorIcon: '#8F76FC'
         },
         {
           menuIcon: 'icon icon-qian',
-          menuName: '交易市场'
+          menuName: '交易市场',
+          colorIcon: '#00DF73'
         },
         {
           menuIcon: 'icon icon-zhanghuzhongxin',
-          menuName: '团队'
+          menuName: '团队',
+          colorIcon: '#F8F000'
         },
         {
           menuIcon: 'icon icon-mima1',
-          menuName: '分享'
+          menuName: '分享',
+          colorIcon: '#00DF73'
         },
         {
           menuIcon: 'icon icon-wenti',
-          menuName: '投资建议'
+          menuName: '投资建议',
+          colorIcon: '#F8F000'
         }
       ]
     }
@@ -196,31 +212,49 @@ export default {
         width: 100%;
       }
     }
-    .home_information {
-      position: absolute;
-      top: 0;
-      left: 0;
-      span{
-        color: #fff;
-      }
-    }
     .home_personal {
       position: absolute;
       top: 0;
       left: 0;
-      margin-bottom: 54px;
-      img {
-        display: block;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin: 0 auto;
-        margin-top: 20px;
+      padding-bottom: 54PX;
+      .home_portrait {
+        position: relative;
+        img {
+          display: block;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          margin: 0 auto;
+          margin-top: 40px;
+        }
+        .home_portrait_grade {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          bottom: 0;
+          right: -10px;
+          background-color: #f00;
+        }
       }
       .home_name {
         text-align: center;
-        span {
-          color: #fff;
+        margin-top: 10px;
+        p {
+          color: @white_color;
+        }
+        .home_star {
+          margin-top: -18px;
+        }
+        .home_people {
+          background-color: #f8f000;
+          height: 40px;
+          padding: 0 20px;
+          border-radius: 20px;
+          line-height: 40px;
+          span {
+            color: #f00;
+            font-size: 24px;
+          }
         }
       }
       .home_flex {
@@ -234,28 +268,29 @@ export default {
           text-align: center;
           color: #fff;
           i {
-            font-size: 28px;
+            font-size: 60px;
           }
           p {
-            font-size: 12px;
+            font-size: 24px;
           }
         }
         span {
           display: block;
           width: 2px;
-          height: 26px;
-          background-color: #56a7f2;
+          height: 50px;
+          background-color: #6B80FF;
         }
       }
       .home_background_color {
         background-color: @white_color;
         .pd_15 {
-          padding: 0 15px;
+          padding: 0 30px;
         }
         .home_assets {
           p {
             i {
-              margin-right: 5px;
+              margin-right: 6px;
+              font-size: 34px;
             }
           }
           span {
@@ -267,7 +302,7 @@ export default {
         width: 100%;
         background-color: @white_color;
         .weui-grid {
-          padding: 5px 15px;
+          padding: 8px 15px;
         }
         .home_space_between {
           display: flex;
@@ -275,7 +310,8 @@ export default {
           span {
             color: #000;
             i {
-              margin-right: 5px;
+              margin-right: 6px;
+              font-size: 34px;
             }
           }
           strong {
@@ -286,46 +322,45 @@ export default {
       }
       .home_announcement {
         width: 100%;
-        padding: 5px 10px;
+        padding: 10px 20px;
         box-sizing: border-box;
-        border-radius: 5px;
+        border-radius: 6px;
         background-color: @box_background;
         .home_border {
-          flex-direction: row;
-          background-color: @white_color;
           display: flex;
+          flex-direction: row;
+          align-items: center;
+          background-color: @white_color;
           color: #4084f3;
+          padding: 0 10px;
+          padding-right: 80px;
+          border-radius: 10px;
           i {
-            margin-right: 10px
+            margin-right: 10px;
+            font-size: 34px;
           }
           .home_announcement {
             color: @tabbar-text-active-color;
           }
           .home_announcement1 {
             position: absolute;
-            right: 10px;
+            right: 30px;
           }
         }
       }
-      .home_grid {
+      .home_a {
+        background-color: @white_color;
         .home_menu {
           text-align: center;
           i {
-            font-size: 40px;
+            font-size: 60px;
+          }
+          p {
+            font-size: 24px;
+            color: #000;
           }
         }
       }
     }
-  }
-
-
-
-
-  .flex-demo {
-    text-align: center;
-    color: #fff;
-    background-color: #20b907;
-    border-radius: 4px;
-    background-clip: padding-box;
   }
 </style>

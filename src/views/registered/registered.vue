@@ -4,24 +4,24 @@
     <x-header :left-options="{showBack: false}">注 册</x-header>
     <!--logo-->
     <div class="registered_logo">
-      <img src="../../assets/logo.png" />
+      <img src="../../assets/img/logo.png" />
     </div>
     <!--input-->
     <div class="registered_input">
-      <x-input placeholder="请输入手机号码" class="weui-vcode">
+      <x-input placeholder="请输入手机号码" class="weui-vcode" :show-clear="false">
         <i slot="label" class="icon icon-yinhangqia1"></i>
         <x-button slot="right" type="primary" mini class="but">发送验证码</x-button>
       </x-input>
-      <x-input placeholder="请输入手机验证码">
+      <x-input placeholder="请输入手机验证码" :show-clear="false">
         <i slot="label" class="icon icon-yinhangqia1"></i>
       </x-input>
-      <x-input placeholder="请输入登录密码">
+      <x-input placeholder="请输入登录密码" :show-clear="false">
         <i slot="label" class="icon icon-yinhangqia1"></i>
       </x-input>
-      <x-input placeholder="请再次输入登录密码">
+      <x-input placeholder="请再次输入登录密码" :show-clear="false">
         <i slot="label" class="icon icon-yinhangqia1"></i>
       </x-input>
-      <x-input placeholder="请输入邀请码">
+      <x-input placeholder="请输入邀请码" :show-clear="false">
         <i slot="label" class="icon icon-yinhangqia1"></i>
       </x-input>
     </div>
@@ -36,7 +36,12 @@
 
 <script>
 export default {
-  name: "registered"
+  name: "registered",
+  data () {
+    return {
+    }
+  },
+  methods: {}
 }
 </script>
 
@@ -51,9 +56,10 @@ export default {
       }
     }
     .registered_input {
-      padding-right: 10px;
+      padding-right: 20px;
       i {
         margin-right: 10px;
+        font-size: 34px;
       }
     }
     .registered_features {

@@ -28,7 +28,8 @@ import {
   Cell,
   Marquee,
   MarqueeItem,
-  Box
+  Box,
+  Rater
 } from 'vux'
 Vue.use(LoadingPlugin);
 Vue.component('flexbox', Flexbox);
@@ -48,6 +49,7 @@ Vue.component('cell', Cell);
 Vue.component('marquee', Marquee);
 Vue.component('marquee-item', MarqueeItem);
 Vue.component('box', Box);
+Vue.component('rater', Rater);
 
 FastClick.attach(document.body);
 Vue.config.productionTip = false;
