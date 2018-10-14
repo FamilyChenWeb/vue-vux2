@@ -29,7 +29,13 @@ import {
   Marquee,
   MarqueeItem,
   Box,
-  Rater
+  Rater,
+  CellBox,
+  CellFormPreview,
+  Confirm,
+  Icon,
+  Radio,
+  XTextarea
 } from 'vux'
 Vue.use(LoadingPlugin);
 Vue.component('flexbox', Flexbox);
@@ -50,6 +56,12 @@ Vue.component('marquee', Marquee);
 Vue.component('marquee-item', MarqueeItem);
 Vue.component('box', Box);
 Vue.component('rater', Rater);
+Vue.component('cell-box', CellBox);
+Vue.component('cell-form-preview', CellFormPreview);
+Vue.component('confirm', Confirm);
+Vue.component('icon', Icon);
+Vue.component('radio', Radio);
+Vue.component('x-textarea', XTextarea)
 
 FastClick.attach(document.body);
 Vue.config.productionTip = false;
@@ -64,20 +76,14 @@ Vue.prototype.putRequest = putRequest;
 new Vue({
   router,
   created: function () {
-    // 基准大小
-    const baseSize = 32
-// 设置 rem 函数
+    const baseSize = 32;
     function setRem () {
-      // 当前页面宽度相对于 750 宽的缩放比例，可根据自己需要修改。
-      const scale = document.documentElement.clientWidth / 750
-      // 设置页面根节点字体大小
-      document.documentElement.style.fontSize = (baseSize * Math.min(scale, 2)) + 'px'
+      const scale = document.documentElement.clientWidth / 750;
+      document.documentElement.style.fontSize = (baseSize * Math.min(scale, 2)) + 'px';
     }
-// 初始化
-    setRem()
-// 改变窗口大小时重新设置 rem
+    setRem();
     window.onresize = function () {
-      setRem()
+      setRem();
     }
   },
 render: h => h(App)

@@ -85,7 +85,7 @@
           </div>
           <!--菜单-->
           <grid :cols="3" :show-lr-borders="false" class="home_a">
-            <grid-item v-for="(item, index) in icon" :key="index" class="home_menu">
+            <grid-item v-for="(item, index) in icon" :key="index" @click.native="getMenu(index)" class="home_menu">
               <i :class="item.menuIcon" :style="{color: item.colorIcon}"></i>
               <p class="grid-center">{{item.menuName}}</p>
             </grid-item>
@@ -129,47 +129,56 @@ export default {
         {
           menuIcon: 'icon icon-yinhangqia1',
           menuName: '转出',
-          colorIcon: '#5d39fc'
+          colorIcon: '#5d39fc',
+          url: '/'
         },
         {
           menuIcon: 'icon icon-jifen1',
           menuName: '转入',
-          colorIcon: '#f8f000'
+          colorIcon: '#f8f000',
+          url: '/'
         },
         {
           menuIcon: 'icon icon-licai',
           menuName: '理财',
-          colorIcon: '#5d3afc'
+          colorIcon: '#5d3afc',
+          url: '/'
         },
         {
           menuIcon: 'icon icon-huiyuan',
           menuName: '会员礼包',
-          colorIcon: '#EE4C00'
+          colorIcon: '#EE4C00',
+          url: '/payment'
         },
         {
           menuIcon: 'icon icon-dianpu1',
           menuName: '商城',
-          colorIcon: '#8F76FC'
+          colorIcon: '#8F76FC',
+          url: '/'
         },
         {
           menuIcon: 'icon icon-qian',
           menuName: '交易市场',
-          colorIcon: '#00DF73'
+          colorIcon: '#00DF73',
+          url: '/'
         },
         {
           menuIcon: 'icon icon-zhanghuzhongxin',
           menuName: '团队',
-          colorIcon: '#F8F000'
+          colorIcon: '#F8F000',
+          url: '/'
         },
         {
           menuIcon: 'icon icon-mima1',
           menuName: '分享',
-          colorIcon: '#00DF73'
+          colorIcon: '#00DF73',
+          url: '/'
         },
         {
           menuIcon: 'icon icon-wenti',
           menuName: '投资建议',
-          colorIcon: '#F8F000'
+          colorIcon: '#F8F000',
+          url: '/proposal'
         }
       ]
     }
@@ -177,6 +186,9 @@ export default {
   methods: {
     onClick (i) {
       console.log(i)
+    },
+    getMenu (e) {
+      this.$router.push({ path: this.icon[e].url })
     }
   },
   mounted () {
