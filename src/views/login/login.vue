@@ -1,32 +1,34 @@
 <template>
   <div class="login">
-    <!--header-->
-    <x-header :left-options="{showBack: false}">登 录</x-header>
-    <!--logo-->
-    <div class="login_logo">
-      <img src="../../assets/img/logo.png" />
-    </div>
-    <!--input-->
-    <div class="login_input">
-      <x-input placeholder="请输入登录账号" :show-clear="false">
-        <i slot="label" class="icon icon-yinhangqia1"></i>
-      </x-input>
-      <x-input placeholder="请输入登录密码" :show-clear="false">
-        <i slot="label" class="icon icon-yinhangqia1"></i>
-      </x-input>
-      <x-input placeholder="请输入验证码" :show-clear="false">
-        <i slot="label" class="icon icon-yinhangqia1"></i>
-        <img slot="right-full-height" src="https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg">
-      </x-input>
-    </div>
-    <!--按钮-->
-    <box gap="10px 10px">
-      <x-button class="but" @click.native="getLogin">登 录</x-button>
-    </box>
-    <div class="login_features">
-      <router-link to="/registered">注册</router-link>
-      <router-link to="">忘记密码</router-link>
-    </div>
+    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+      <!--header-->
+      <x-header :left-options="{showBack: false}">登 录</x-header>
+      <!--logo-->
+      <div class="login_logo">
+        <img src="../../assets/img/logo.png" />
+      </div>
+      <!--input-->
+      <group class="login_input">
+        <x-input type="text" placeholder="请输入登录账号">
+          <i slot="label" class="vue-icon icon-yonghuming"></i>
+        </x-input>
+        <x-input type="password" placeholder="请输入登录密码">
+          <i slot="label" class="vue-icon icon-mima1"></i>
+        </x-input>
+        <x-input type="text" placeholder="请输入验证码">
+          <i slot="label" class="vue-icon icon-anquanrenzheng"></i>
+          <img slot="right-full-height" src="https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg">
+        </x-input>
+      </group>
+      <!--按钮-->
+      <box gap="10px 10px">
+        <x-button type="primary" class="but" @click.native="getLogin">登 录</x-button>
+      </box>
+      <div class="login_features">
+        <router-link to="/registered">注册</router-link>
+        <router-link to="">忘记密码</router-link>
+      </div>
+    </view-box>
   </div>
 </template>
 
@@ -40,8 +42,7 @@ export default {
   },
   methods: {
     getLogin () {
-      console.log(`123`)
-      // this.$router.push({ path: '/home' })
+      this.$router.push({ path: '/home' })
     }
   }
 }
@@ -50,7 +51,7 @@ export default {
 <style scoped lang="less">
   .login {
     height: 100%;
-    background-color: #fff;
+    background-color: @whiteColor;
     .login_logo {
       img {
         display: block;
@@ -58,10 +59,10 @@ export default {
       }
     }
     .login_input {
-      padding-right: 20px;
+      padding-right: 10PX;
       i {
-        margin-right: 10px;
-        font-size: 34px;
+        margin-right: 30px;
+        font-size: 40px;
       }
     }
     .login_features {
@@ -69,12 +70,8 @@ export default {
       display: flex;
       justify-content: space-between;
       a {
-        color: @tabbar-text-active-color;
+        color: @mainColor;
       }
-    }
-    .but {
-      background-color: @but;
-      color: #fff;
     }
   }
 </style>

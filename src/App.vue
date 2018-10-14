@@ -19,7 +19,8 @@ export default {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    background-color: @box_background;
+    background-color: @backgroundColor;
+    color: @secondaryColor;
     #app {
       height: 100%;
     }

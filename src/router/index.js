@@ -9,6 +9,11 @@ import Membership from '@/views/member/membership'
 import Payment from '@/views/member/payment'
 import PaymentSuccess from '@/views/member/paymentSuccess'
 import Proposal from '@/views/proposal/proposal'
+import MyProposal from '@/views/proposal/myProposal'
+import ReceivingAddress from '@/views/receivingAddress/receivingAddress'
+import NewAddress from '@/views/receivingAddress/newAddress'
+import TurnOut from '@/views/turnOut/turnOut'
+import TurnOutRecord from '@/views/turnOut/turnOutRecord'
 
 Vue.use(Router)
 
@@ -65,6 +70,31 @@ export default new Router({
       path: '/proposal',
       name: 'proposal',
       component: Proposal
+    },
+    {
+      path: '/myProposal',
+      name: 'myProposal',
+      component: MyProposal
+    },
+    {
+      path: '/receivingAddress',
+      name: 'receivingAddress',
+      component: ReceivingAddress
+    },
+    {
+      path: '/turnOut',
+      name: 'turnOut',
+      component: TurnOut
+    },
+    {
+      path: '/turnOutRecord',
+      name: 'turnOutRecord',
+      component: TurnOutRecord
+    },
+    {
+      path: '/newAddress',
+      name: 'newAddress',
+      component: NewAddress
     },
   ]
 })

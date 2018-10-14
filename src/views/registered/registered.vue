@@ -1,36 +1,39 @@
 <template>
   <div class="registered">
-    <!--header-->
-    <x-header :left-options="{showBack: false}">注 册</x-header>
-    <!--logo-->
-    <div class="registered_logo">
-      <img src="../../assets/img/logo.png" />
-    </div>
-    <!--input-->
-    <div class="registered_input">
-      <x-input placeholder="请输入手机号码" class="weui-vcode" :show-clear="false">
-        <i slot="label" class="icon icon-yinhangqia1"></i>
-        <x-button slot="right" type="primary" mini class="but">发送验证码</x-button>
-      </x-input>
-      <x-input placeholder="请输入手机验证码" :show-clear="false">
-        <i slot="label" class="icon icon-yinhangqia1"></i>
-      </x-input>
-      <x-input placeholder="请输入登录密码" :show-clear="false">
-        <i slot="label" class="icon icon-yinhangqia1"></i>
-      </x-input>
-      <x-input placeholder="请再次输入登录密码" :show-clear="false">
-        <i slot="label" class="icon icon-yinhangqia1"></i>
-      </x-input>
-      <x-input placeholder="请输入邀请码" :show-clear="false">
-        <i slot="label" class="icon icon-yinhangqia1"></i>
-      </x-input>
-    </div>
-    <box gap="10px 10px">
-      <x-button type="primary" class="but">注 册</x-button>
-    </box>
-    <div class="registered_features">
-      <router-link to="/login">登 录</router-link>
-    </div>
+    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+      <!--header-->
+      <x-header :left-options="{showBack: false}">注 册</x-header>
+      <!--logo-->
+      <div class="registered_logo">
+        <img src="../../assets/img/logo.png" />
+      </div>
+      <!--input-->
+      <group class="registered_input">
+        <x-input type="number" placeholder="请输入手机号码" class="weui-vcode">
+          <i slot="label" class="vue-icon icon-9kaobei"></i>
+          <x-button slot="right" type="primary" mini class="but">发送验证码</x-button>
+        </x-input>
+        <x-input type="number" placeholder="请输入手机验证码">
+          <i slot="label" class="vue-icon icon-anquanrenzheng"></i>
+        </x-input>
+        <x-input type="password" placeholder="请输入登录密码">
+          <i slot="label" class="vue-icon icon-mima1"></i>
+        </x-input>
+        <x-input type="password" placeholder="请再次输入登录密码">
+          <i slot="label" class="vue-icon icon-mima1"></i>
+        </x-input>
+        <popup-picker title="<i slot='label' class='vue-icon icon-mima1 popup_icon'></i>" placeholder="请选择性别" :data="sexList" v-model="sex" value-text-align="left"></popup-picker>
+        <x-input type="text" placeholder="请输入邀请码">
+          <i slot="label" class="vue-icon icon-yaoqinghuoban"></i>
+        </x-input>
+      </group>
+      <box gap="10px 10px">
+        <x-button type="primary" class="but">注 册</x-button>
+      </box>
+      <div class="registered_features">
+        <router-link to="/login">登 录</router-link>
+      </div>
+    </view-box>
   </div>
 </template>
 
@@ -39,6 +42,8 @@ export default {
   name: "registered",
   data () {
     return {
+      sex: [],
+      sexList: [['男', '女']],
     }
   },
   methods: {}
@@ -48,7 +53,7 @@ export default {
 <style scoped lang="less">
   .registered {
     height: 100%;
-    background-color: #fff;
+    background-color: @whiteColor;
     .registered_logo {
       img {
         display: block;
@@ -56,16 +61,16 @@ export default {
       }
     }
     .registered_input {
-      padding-right: 20px;
+      padding-right: 10PX;
       i {
-        margin-right: 10px;
-        font-size: 34px;
+        margin-right: 30px;
+        font-size: 40px;
       }
     }
     .registered_features {
       text-align: center;
       a {
-        color: @tabbar-text-active-color;
+        color: @mainColor;
       }
     }
   }

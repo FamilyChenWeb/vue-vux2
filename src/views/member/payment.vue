@@ -6,7 +6,7 @@
       <!--内容-->
       <group>
         <cell-box is-link class="payment_address">
-          <i class="icon icon-9kaobei"></i>
+          <i class="vue-icon icon-dizhi"></i>
           <div class="payment_consignee">
             <div class="payment_flex">
               <span>收货人:qwe</span>
@@ -16,28 +16,33 @@
           </div>
         </cell-box>
       </group>
-      <group>
-        <div class="payment_flex_row">
-          <img :src="img" />
-          <div>
-            <p>123</p>
-            <span>123456.00</span>
+      <group class="payment_column">
+        <cell-box>
+          <div class="payment_column_flex">
+            <img :src="img" />
+            <div class="payment_column_font">
+              <span>V1 会员礼包</span>
+              <p>100.00</p>
+            </div>
           </div>
-        </div>
-        <cell-form-preview :list="list">
-          <p>123</p>
-          <p>123456</p>
-        </cell-form-preview>
+        </cell-box>
+        <cell-box>
+          <div class="payment_details">
+            <p>V1 会员礼包详情：</p>
+            <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+          </div>
+        </cell-box>
       </group>
-      <!--@click.native="getPayment"-->
-      <x-button type="primary" @click.native="getPayment" style="position: absolute; bottom: 0;">支 付</x-button>
-
-      <confirm v-model="show5"
-               title="交易密码"
-               :close-on-confirm="false"
-               @on-cancel="onCancel"
-               @on-confirm="onConfirm4">
-        <p style="text-align:center;">需支付：<span>1000.00</span></p>
+      <x-button type="primary" class="but" @click.native="getPayment">支 付</x-button>
+      <confirm
+        v-model="show5"
+        title="交易密码"
+        :close-on-confirm="false"
+        @on-cancel="onCancel"
+        @on-confirm="onConfirm4"
+        class="payment_confirm"
+      >
+        <p>需支付：<span>1000.00</span></p>
         <x-input title="" placeholder="请输入交易密码" :show-clear="false"></x-input>
       </confirm>
     </view-box>
@@ -89,7 +94,7 @@ export default {
     height: 100%;
     .payment_address {
       i {
-        font-size: 34px;
+        font-size: 60px;
       }
       .payment_consignee {
         width: 100%;
@@ -98,22 +103,47 @@ export default {
           display: flex;
           justify-content: space-between;
         }
+        p {
+          font-size: 24px;
+        }
       }
     }
-    .payment_flex_row {
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      img {
-        width: 200px;
-        height: 200px;
+    .payment_column {
+      .weui-cell {
+        display: block;
       }
-      span {
-        color: #f00;
+      .payment_column_flex {
+        display: flex;
+        align-items: center;
+        img {
+          display: block;
+          width: 200px;
+          margin-right: 30px;
+        }
+        .payment_column_font {
+          p {
+            color: @priceColor;
+          }
+        }
+      }
+      .payment_details {
+        p {
+          color: @auxiliaryColor;
+          font-size: 24px;
+        }
       }
     }
-  }
-  .weui-dialog__bd .weui-cell:before {
-    top: 40px;
+    .but {
+      position: absolute;
+      bottom: 0;
+    }
+    .payment_confirm {
+      p {
+        color: @secondaryColor;
+        span {
+          color: @priceColor;
+        }
+      }
+    }
   }
 </style>

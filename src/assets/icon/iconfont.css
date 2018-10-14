@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icon"], [class*="icon"] {
+[class^="vue-icon"], [class*="vue-icon"] {
   font-family:"iconfont" !important;
   font-size:16px;
   font-style:normal;

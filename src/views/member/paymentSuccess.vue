@@ -1,13 +1,14 @@
 <template>
   <div class="paymentSuccess">
-    <view-box ref="viewBox" body-padding-top="43px"  body-padding-bottom="42px">
+    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{showBack: false}" slot="header">支付购买</x-header>
       <flexbox orient="vertical" :gutter="0" class="paymentSuccess_content">
         <flexbox-item>
-          <i class="icon icon-9kaobei"></i>
+          <icon type="success" is-msg></icon>
           <p>购买成功</p>
-          <x-button mini type="warn" disabled>disable mini Delete</x-button>
+          <!--@click.native="getHome"-->
+          <x-button mini type="warn" link="/" disabled>返回首页</x-button>
         </flexbox-item>
       </flexbox>
     </view-box>
@@ -16,7 +17,13 @@
 
 <script>
 export default {
-  name: "paymentSuccess"
+  name: "paymentSuccess",
+  methods: {
+    getHome () {
+      console.log(`123`)
+      this.$router.push({ path: '/' })
+    }
+  }
 }
 </script>
 
@@ -24,14 +31,12 @@ export default {
   .paymentSuccess {
     .paymentSuccess_content {
       margin-top: 20px;
-      background-color: #fff;
+      background-color: @whiteColor;
       text-align: center;
       padding: 60px 0;
-      i {
-        font-size: 92px;
-      }
       p {
         font-size: 48px;
+        padding: 30px 0;
       }
     }
   }

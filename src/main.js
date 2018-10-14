@@ -35,7 +35,10 @@ import {
   Confirm,
   Icon,
   Radio,
-  XTextarea
+  XTextarea,
+  FormPreview,
+  CheckIcon,
+  PopupPicker
 } from 'vux'
 Vue.use(LoadingPlugin);
 Vue.component('flexbox', Flexbox);
@@ -62,6 +65,9 @@ Vue.component('confirm', Confirm);
 Vue.component('icon', Icon);
 Vue.component('radio', Radio);
 Vue.component('x-textarea', XTextarea)
+Vue.component('form-preview', FormPreview)
+Vue.component('check-icon', CheckIcon)
+Vue.component('popup-picker', PopupPicker)
 
 FastClick.attach(document.body);
 Vue.config.productionTip = false;
