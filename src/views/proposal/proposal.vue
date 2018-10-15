@@ -1,6 +1,6 @@
 <template>
   <div class="proposal">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="42px">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="42px">
       <!--header-->
       <x-header :left-options="{backText: ''}">投诉建议<router-link to="/myProposal" slot="right">我的建议</router-link></x-header>
       <group title="请选择留言类型">

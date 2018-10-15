@@ -1,6 +1,6 @@
 <template>
   <div class="turnOutRecord">
-  <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+  <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
     <!--header-->
     <x-header :left-options="{backText: ''}">转出记录</x-header>
     <group>
@@ -40,7 +40,7 @@ export default {
       }
     }
     p {
-      font-size: 24px;
+      font-size: 12px;
       color: @auxiliaryColor;
     }
   }

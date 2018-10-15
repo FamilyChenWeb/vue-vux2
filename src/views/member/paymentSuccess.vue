@@ -1,6 +1,6 @@
 <template>
   <div class="paymentSuccess">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{showBack: false}" slot="header">支付购买</x-header>
       <flexbox orient="vertical" :gutter="0" class="paymentSuccess_content">
@@ -30,13 +30,13 @@ export default {
 <style scoped lang="less">
   .paymentSuccess {
     .paymentSuccess_content {
-      margin-top: 20px;
+      margin-top: 10px;
       background-color: @whiteColor;
       text-align: center;
-      padding: 60px 0;
+      padding: 30px 0;
       p {
-        font-size: 48px;
-        padding: 30px 0;
+        font-size: 28px;
+        padding: 20px 0;
       }
     }
   }

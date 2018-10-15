@@ -1,6 +1,6 @@
 <template>
   <div class="membership">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{backText: ''}" slot="header">会员礼包</x-header>
       <!--内容-->
@@ -59,9 +59,9 @@ export default {
     height: 100%;
     box-sizing: border-box;
     .membership_nav {
-      padding: 5PX 0;
+      padding: 4PX 0;
       .membership_content {
-        padding: 5PX 10PX;
+        padding: 4PX 8PX;
         box-sizing: border-box;
         .membership_list {
           background-color: @whiteColor;
@@ -71,7 +71,7 @@ export default {
 
           }
           .membership_font {
-            padding: 0 20px;
+            padding: 0 10px;
             p {
               color: @orangeColor;
             }

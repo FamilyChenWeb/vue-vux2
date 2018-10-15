@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{showBack: false}">登 录</x-header>
       <!--logo-->
@@ -21,9 +21,9 @@
         </x-input>
       </group>
       <!--按钮-->
-      <box gap="10px 10px">
+      <div class="login_but">
         <x-button type="primary" class="but" @click.native="getLogin">登 录</x-button>
-      </box>
+      </div>
       <div class="login_features">
         <router-link to="/registered">注册</router-link>
         <router-link to="">忘记密码</router-link>
@@ -59,14 +59,19 @@ export default {
       }
     }
     .login_input {
-      padding-right: 10PX;
+      padding-right: 15px;
       i {
-        margin-right: 30px;
-        font-size: 40px;
+        margin-right: 10px;
+        font-size: 24px;
       }
     }
+    .login_but {
+      padding: 0 15px;
+      margin-top: 50px;
+      margin-bottom: 10px;
+    }
     .login_features {
-      padding: 0 20px;
+      padding: 0 15px;
       display: flex;
       justify-content: space-between;
       a {

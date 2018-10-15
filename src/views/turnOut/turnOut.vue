@@ -1,6 +1,6 @@
 <template>
   <div class="turnOut">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{backText: ''}">转出<router-link to="/turnOutRecord" slot="right">转出记录</router-link></x-header>
       <group title="我的余额：123.00" class="turnOut_input">
@@ -36,12 +36,12 @@ export default {
   .turnOut {
     .turnOut_input {
       p {
-        padding-left: 15PX;
+        padding-left: 15px;
         margin-top: 10px;
       }
     }
     .turnOut_but {
-      margin-top: 60px;
+      margin-top: 30px;
       padding: 0 20px;
     }
   }

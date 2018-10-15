@@ -1,6 +1,6 @@
 <template>
   <div class="myProposal">
-    <view-box ref="viewBox" body-padding-top="43px"  body-padding-bottom="0">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{backText: ''}">我的建议</x-header>
       <div class="myProposal_content">
@@ -50,29 +50,29 @@ export default {
     height: 100%;
     .myProposal_content {
       background-color: @whiteColor;
-      padding-left: 20px;
-      margin-top: 20px;
+      padding-left: 15px;
+      margin-top: 10px;
       .myProposal_content_top {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 10px 0;
-        padding-right: 20px;
+        padding-right: 10px;
         strong {
           font-weight: normal;
-          font-size: 24px;
+          font-size: 12px;
           color: @auxiliaryColor;
         }
       }
       .myProposal_content_center {
         border-top: 1px solid @ashColor;
         border-bottom: 1px solid @ashColor;
-        padding: 10px 0;
+        padding: 5px 0;
       }
       .myProposal_content_bottom {
         color: @mainColor;
-        font-size: 24px;
-        padding: 10px 0;
+        font-size: 12px;
+        padding: 5px 0;
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="registered">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{showBack: false}">注 册</x-header>
       <!--logo-->
@@ -27,9 +27,9 @@
           <i slot="label" class="vue-icon icon-yaoqinghuoban"></i>
         </x-input>
       </group>
-      <box gap="10px 10px">
+      <div class="registered_but">
         <x-button type="primary" class="but">注 册</x-button>
-      </box>
+      </div>
       <div class="registered_features">
         <router-link to="/login">登 录</router-link>
       </div>
@@ -61,10 +61,10 @@ export default {
       }
     }
     .registered_input {
-      padding-right: 10PX;
+      padding-right: 15px;
       i {
-        margin-right: 30px;
-        font-size: 40px;
+        margin-right: 10px;
+        font-size: 24px;
       }
     }
     .registered_features {
@@ -72,6 +72,11 @@ export default {
       a {
         color: @mainColor;
       }
+    }
+    .registered_but {
+      padding: 0 15px;
+      margin-top: 50px;
+      margin-bottom: 10px;
     }
   }
 </style>

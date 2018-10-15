@@ -1,3 +1,4 @@
+
 .but { //按钮
   background-color: @mainColor !important;
 }
@@ -33,9 +34,9 @@
 //登录
 .login {
   .vux-x-input-has-right-full {
-    padding-top: 10PX !important;
-    padding-bottom: 10PX !important;
-    padding-right: 230px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-right: 165px !important;
   }
   .weui-cell__ft .vux-x-input-right-full {
     position: absolute;
@@ -47,7 +48,7 @@
     height: 100% !important;
     img {
       display: block;
-      width: 200px !important;
+      width: 150px !important;
       height: 100% !important;
     }
   }
@@ -56,6 +57,10 @@
   }
   .weui-cells:after {
     left: 15px !important;
+    border-bottom: 1PX solid #D9D9D9;
+  }
+  .weui-input {
+    font-size: 16px;
   }
 }
 //注册
@@ -66,21 +71,22 @@
     padding-right: 230px !important;
   }
   .popup_icon {
-    margin-right: 30px;
-    font-size: 40px;
+    margin-right: 10px;
+    font-size: 24px;
   }
   .weui-cells:before {
     border: none !important;
   }
   .weui-cells:after {
     left: 15px !important;
+    border-bottom: 1PX solid #D9D9D9;
+  }
+  .weui-input, .weui-cell {
+    font-size: 16px;
   }
 }
 //首页
 .home {
-  .vux-marquee {
-    height: 50px;
-  }
   .vux-marquee-box li {
     overflow: hidden;
     text-overflow:ellipsis;
@@ -92,23 +98,33 @@
     font-size: 20px !important;
     line-height: 20px !important;
   }
+  .weui-grid {
+    padding: 8px 15px;
+  }
 }
 //转出
 .turnOut_input {
   .weui-cells__title {
     color: @priceColor !important;
   }
-  .weui-cells {
-    padding: 15px 0 !important;
-  }
   .weui-cells:after {
     border: none;
   }
   .vux-cell-box:not(:first-child):before {
-    top: 44PX;
+    top: 44px;
   }
   .weui-cell:before {
     top: 44px;
+  }
+  .weui-input {
+    font-size: 12px;
+  }
+  .weui-cells {
+    font-size: 16px;
+    padding: 15px 0;
+  }
+  .weui-cell {
+    font-size: 12px;
   }
 }
 //转出记录
@@ -127,6 +143,9 @@
   }
   .weui-cells {
     margin-top: 10px;
+  }
+  .vux-label-desc {
+    font-size: 12px;
   }
 }
 //支付购买
@@ -172,7 +191,7 @@
     color: @mainColor;
   }
   .vux-check-icon > span {
-    font-size: 28px;
+    font-size: 14px;
   }
 }
 //新增地址
@@ -185,12 +204,12 @@
     border: none;
   }
   .vux-cell-box:not(:first-child):before {
-    top: 44PX;
+    top: 44px;
   }
   .weui-cell:before {
     top: 44px;
   }
-  .weui-input, .vux-cell-value {
+  .weui-input, .vux-cell-value, .weui-cell {
     font-size: 12px;
   }
 }

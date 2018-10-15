@@ -1,6 +1,6 @@
 <template>
   <div class="payment">
-    <view-box ref="viewBox" body-padding-top="43px"  body-padding-bottom="42px">
+    <view-box ref="viewBox" body-padding-top="46px"  body-padding-bottom="42px">
       <!--header-->
       <x-header :left-options="{backText: ''}" slot="header">支付购买</x-header>
       <!--内容-->
@@ -94,17 +94,17 @@ export default {
     height: 100%;
     .payment_address {
       i {
-        font-size: 60px;
+        font-size: 30px;
       }
       .payment_consignee {
         width: 100%;
-        padding: 0 50px 0 20px;
+        padding: 0 30px 0 10px;
         .payment_flex {
           display: flex;
           justify-content: space-between;
         }
         p {
-          font-size: 24px;
+          font-size: 12px;
         }
       }
     }
@@ -117,8 +117,8 @@ export default {
         align-items: center;
         img {
           display: block;
-          width: 200px;
-          margin-right: 30px;
+          width: 100px;
+          margin-right: 10px;
         }
         .payment_column_font {
           p {
@@ -129,7 +129,7 @@ export default {
       .payment_details {
         p {
           color: @auxiliaryColor;
-          font-size: 24px;
+          font-size: 12px;
         }
       }
     }

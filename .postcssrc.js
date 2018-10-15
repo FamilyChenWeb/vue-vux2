@@ -10,7 +10,8 @@ module.exports = {
       "propList": ["*"],
       "selectorBlackList": [
         "vux-header",
-        "weui-tabbar"
+        "weui-tabbar",
+        "vux-popup-dialog"
       ]
     }
   }

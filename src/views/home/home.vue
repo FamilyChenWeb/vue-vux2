@@ -1,7 +1,7 @@
 <template>
   <div class="home" style="height: 100%;">
     <!--头部-->
-    <view-box ref="viewBox" body-padding-bottom="54px">
+    <view-box ref="viewBox" body-padding-top="0" body-padding-bottom="54px">
       <div class="home_positioning">
         <!--背景图-->
         <div class="home_background">
@@ -78,13 +78,13 @@
               <marquee>
                 <marquee-item v-for="i in 5" :key="i" @click.native="onClick(i)">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容{{i}}</marquee-item>
               </marquee>
-              <div class="home_announcement1">
+              <div class="home_more">
                 <router-link to="/announcement">更多</router-link>
               </div>
             </div>
           </div>
           <!--菜单-->
-          <grid :cols="3" :show-lr-borders="false" class="home_a">
+          <grid :cols="3" :show-lr-borders="false" class="home_link">
             <grid-item v-for="(item, index) in icon" :key="index" @click.native="getMenu(index)" class="home_menu">
               <i :class="item.menuIcon" :style="{color: item.colorIcon}"></i>
               <p class="grid-center">{{item.menuName}}</p>
@@ -218,6 +218,7 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
       img {
         display: block;
         width: 100%;
@@ -227,6 +228,7 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
       padding-bottom: 54PX;
       .home_portrait {
         position: relative;
@@ -243,7 +245,7 @@ export default {
           height: 40px;
           position: absolute;
           bottom: 0;
-          right: -10px;
+          right: -20px;
           background-color: #f00;
         }
       }
@@ -254,17 +256,17 @@ export default {
           color: @whiteColor;
         }
         .home_star {
-          margin-top: -18px;
+          padding: 2px 0;
         }
         .home_people {
           background-color: @yellowColor;
-          height: 40px;
-          padding: 0 20px;
-          border-radius: 20px;
-          line-height: 40px;
+          height: 20px;
+          padding: 0 10px;
+          border-radius: 10px;
+          line-height: 20px;
           span {
             color: @priceColor;
-            font-size: 24px;
+            font-size: 12px;
           }
         }
       }
@@ -279,29 +281,29 @@ export default {
           text-align: center;
           color: @whiteColor;
           i {
-            font-size: 60px;
+            font-size: 30px;
           }
           p {
-            font-size: 24px;
+            font-size: 12px;
           }
         }
         span {
           display: block;
-          width: 2px;
-          height: 50px;
+          width: 1px;
+          height: 30px;
           background-color: @mainColor;
         }
       }
       .home_background_color {
         background-color: @whiteColor;
         .pd_15 {
-          padding: 0 30px;
+          padding: 0 15px;
         }
         .home_assets {
           p {
             i {
-              margin-right: 6px;
-              font-size: 34px;
+              margin-right: 10px;
+              font-size: 18px;
             }
           }
           span {
@@ -312,17 +314,14 @@ export default {
       .home_grid {
         width: 100%;
         background-color: @whiteColor;
-        .weui-grid {
-          padding: 8px 15px;
-        }
         .home_space_between {
           display: flex;
           justify-content: space-between;
           span {
             color: @secondaryColor;
             i {
-              margin-right: 6px;
-              font-size: 34px;
+              margin-right: 10px;
+              font-size: 18px;
             }
           }
           strong {
@@ -333,9 +332,8 @@ export default {
       }
       .home_announcement {
         width: 100%;
-        padding: 10px 20px;
+        padding: 10px 15px;
         box-sizing: border-box;
-        border-radius: 6px;
         background-color: @backgroundColor;
         .home_border {
           display: flex;
@@ -344,30 +342,27 @@ export default {
           background-color: @whiteColor;
           color: @mainColor;
           padding: 0 10px;
-          padding-right: 80px;
-          border-radius: 10px;
+          padding-right: 54px;
+          border-radius: 6px;
           i {
             margin-right: 10px;
-            font-size: 34px;
+            font-size: 24px;
           }
-          .home_announcement {
-            color: @mainColor;
-          }
-          .home_announcement1 {
+          .home_more {
             position: absolute;
-            right: 30px;
+            right: 25px;
           }
         }
       }
-      .home_a {
+      .home_link {
         background-color: @whiteColor;
         .home_menu {
           text-align: center;
           i {
-            font-size: 60px;
+            font-size: 38px;
           }
           p {
-            font-size: 24px;
+            font-size: 12px;
             color: @secondaryColor;
           }
         }

@@ -1,6 +1,6 @@
 <template>
   <div class="announcement">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{backText: ''}" slot="header">公告详情</x-header>
       <!--内容-->
@@ -26,20 +26,20 @@ export default {
     height: 100%;
     background-color: @whiteColor;
     .announcement_content {
-      padding: 40px;
+      padding: 20px;
       border-top: 4px solid @backgroundColor;
       h2 {
         text-align: center;
         font-weight: normal;
-        font-size: 36px;
+        font-size: 24px;
       }
       p {
         color: @auxiliaryColor;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
       .announcement_content_nav {
-        font-size: 30px;
+        font-size: 18px;
       }
     }
   }

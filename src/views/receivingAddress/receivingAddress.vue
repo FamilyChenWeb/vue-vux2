@@ -1,6 +1,6 @@
 <template>
   <div class="receivingAddress">
-    <view-box ref="viewBox" body-padding-top="43px"  body-padding-bottom="42px">
+    <view-box ref="viewBox" body-padding-top="46px"  body-padding-bottom="42px">
       <!--header-->
       <x-header :left-options="{backText: ''}">收货地址</x-header>
       <group class="receivingAddress_list">
@@ -76,7 +76,7 @@ export default {
     height: 100%;
     .receivingAddress_list {
       p {
-        font-size: 24px;
+        font-size: 12px;
       }
       .receivingAddress_flex {
         display: flex;

@@ -1,6 +1,6 @@
 <template>
   <div class="announcementList">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0px">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0px">
       <!--header-->
       <x-header :left-options="{backText: ''}" slot="header">公 告</x-header>
       <!--内容-->

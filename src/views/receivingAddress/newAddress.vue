@@ -1,6 +1,6 @@
 <template>
   <div class="newAddress">
-    <view-box ref="viewBox" body-padding-top="43px" body-padding-bottom="0">
+    <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="0">
       <!--header-->
       <x-header :left-options="{backText: ''}">新增地址</x-header>
       <group class="newAddress_input">
@@ -36,12 +36,12 @@ export default {
   .newAddress {
     .newAddress_input {
       p {
-        padding-left: 15PX;
+        padding-left: 15px;
         margin-top: 10px;
       }
     }
     .newAddress_but {
-      margin-top: 60px;
+      margin-top: 30px;
       padding: 0 20px;
     }
   }
