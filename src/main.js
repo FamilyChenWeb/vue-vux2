@@ -82,10 +82,10 @@ Vue.prototype.putRequest = putRequest;
 new Vue({
   router,
   created: function () {
-    const baseSize = 32;
     function setRem () {
-      const scale = document.documentElement.clientWidth / 750;
-      document.documentElement.style.fontSize = (baseSize * Math.min(scale, 2)) + 'px';
+      const oHtml = document.getElementsByTagName('html')[0];
+      const width = oHtml.clientWidth;
+      oHtml.style.fontSize = 16 * (width / 375) + 'px'
     }
     setRem();
     window.onresize = function () {

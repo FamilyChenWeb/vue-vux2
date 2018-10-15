@@ -101,7 +101,7 @@
           <i slot="icon" class="vue-icon icon-dianpu1"></i>
           <span slot="label">Message</span>
         </tabbar-item>
-        <tabbar-item link="/component/demo">
+        <tabbar-item>
           <i slot="icon" class="vue-icon icon-jifen"></i>
           <span slot="label">Explore</span>
         </tabbar-item>
